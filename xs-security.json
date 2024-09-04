@@ -1,6 +1,33 @@
 {
-  "scopes": [],
+  "xsappname": "zcompanymgmt_oData",
+  "tenant-mode": "dedicated",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.Admin",
+      "description": "Admin"
+    }
+  ],
   "attributes": [],
-  "role-templates": [],
+  "role-templates": [
+    {
+      "name": "Companymgmt_Service",
+      "description": "Admin role-templates for companymgmt",
+      "scope-references": [
+        "$XSAPPNAME.Admin"
+      ],
+      "attribute-references": []
+    }
+  ],
+  "oauth2-configuration": {
+    "credential-types": [
+      "binding-secret",
+      "x509"
+    ],
+    "redirect-uris": [
+      "https://*.api.cf.us10-001.hana.ondemand.com/**",
+      "https://*.applicationstudio.cloud.sap/**",
+      "https://*.cfapps.us10-001.hana.ondemand.com/login/callback"
+    ]
+  },
   "authorities-inheritance": false
 }
